@@ -1,1 +1,443 @@
 
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lysis — Prendre le son, respecter l’artiste</title>
+  <meta name="description" content="Prise de son et mixage pour musiciens professionnels : respect du timbre, intention, jeu et dynamique. Un résultat parfait sans jargon technique." />
+  <meta name="theme-color" content="#0b0c0f" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Typo élégante + lisible -->
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300,400,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Background décor (grain + halo) -->
+  <div class="bg" aria-hidden="true">
+    <div class="bg__halo"></div>
+    <div class="bg__grain"></div>
+    <div class="bg__lines"></div>
+  </div>
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Aller en haut">
+      <img class="brand__badge" src="assets/badge.png" alt="Badge Lysis" />
+      <span class="brand__text">
+        <span class="brand__name">Lysis</span>
+        <span class="brand__tag">Respect du timbre • Prise de son • Mixage</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#approche">Approche</a>
+      <a href="#prestations">Prestations</a>
+      <a href="#process">Méthode</a>
+      <a href="#temoignages">Avis</a>
+      <a class="btn btn--ghost" href="#contact">Contact</a>
+    </nav>
+
+    <button class="nav__toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Scroll progress -->
+  <div class="progress" aria-hidden="true"><div class="progress__bar"></div></div>
+
+  <!-- Scroll container (snap like Apple) -->
+  <main class="snap" id="home">
+    <!-- HERO -->
+    <section class="panel hero" data-panel>
+      <div class="wrap">
+        <div class="hero__grid">
+          <div class="hero__copy">
+            <p class="kicker reveal">Pour musiciens professionnels</p>
+            <h1 class="display reveal">
+              Le son fidèle à votre instrument.
+              <span class="display__accent">Sans compromis.</span>
+            </h1>
+            <p class="lead reveal">
+              Prise de son et mixage pensés pour préserver <strong>le timbre</strong>, la <strong>dynamique</strong>
+              et l’<strong>intention</strong>. Pas de jargon : vous jouez, on respecte.
+            </p>
+
+            <div class="hero__cta reveal">
+              <a class="btn btn--primary" href="#contact">
+                Demander une écoute
+                <span class="btn__icon">↗</span>
+              </a>
+              <a class="btn btn--soft" href="#prestations">Voir les prestations</a>
+            </div>
+
+            <div class="hero__chips reveal" role="list" aria-label="Promesses">
+              <span class="chip" role="listitem">Respect du timbre</span>
+              <span class="chip" role="listitem">Dynamique intacte</span>
+              <span class="chip" role="listitem">Écoute musicale</span>
+              <span class="chip" role="listitem">Livraison premium</span>
+            </div>
+          </div>
+
+          <div class="hero__visual" aria-hidden="true">
+            <!-- “Instrument aura” : SVG génératif, pas d’images nécessaires -->
+            <div class="orb" data-parallax="0.55"></div>
+            <div class="frame" data-parallax="0.25">
+              <svg class="wave" viewBox="0 0 900 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="g" x1="40" y1="60" x2="860" y2="460" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="rgba(255,230,175,0.90)"/>
+                    <stop offset="0.4" stop-color="rgba(255,198,120,0.65)"/>
+                    <stop offset="1" stop-color="rgba(138,164,255,0.50)"/>
+                  </linearGradient>
+                  <filter id="blur" x="-30%" y="-30%" width="160%" height="160%">
+                    <feGaussianBlur stdDeviation="14"/>
+                  </filter>
+                </defs>
+
+                <!-- Cordes (traits) -->
+                <path d="M120 120 C 260 70, 380 90, 520 120 C 660 150, 740 160, 820 140"
+                      stroke="url(#g)" stroke-width="2" opacity="0.55"/>
+                <path d="M110 190 C 260 140, 380 160, 520 190 C 660 220, 740 230, 830 210"
+                      stroke="url(#g)" stroke-width="2" opacity="0.40"/>
+                <path d="M120 260 C 260 210, 380 230, 520 260 C 660 290, 740 300, 820 280"
+                      stroke="url(#g)" stroke-width="2" opacity="0.30"/>
+
+                <!-- Onde “vivante” -->
+                <path class="wave__path" d="M80 360 C 160 290, 240 430, 320 360 C 400 290, 480 430, 560 360 C 640 290, 720 430, 800 360"
+                      stroke="url(#g)" stroke-width="10" stroke-linecap="round" filter="url(#blur)" opacity="0.95"/>
+                <path class="wave__path2" d="M80 360 C 160 320, 240 400, 320 360 C 400 320, 480 400, 560 360 C 640 320, 720 400, 800 360"
+                      stroke="rgba(255,255,255,0.25)" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+
+              <div class="spec">
+                <div class="spec__row">
+                  <span class="spec__k">Objectif</span>
+                  <span class="spec__v">Un son naturel, “présent”</span>
+                </div>
+                <div class="spec__row">
+                  <span class="spec__k">Priorité</span>
+                  <span class="spec__v">Timbre • Attaque • Respiration</span>
+                </div>
+                <div class="spec__row">
+                  <span class="spec__k">Style</span>
+                  <span class="spec__v">Élégant, musical, durable</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="scrollhint" aria-hidden="true">
+          <span class="scrollhint__dot"></span>
+          <span class="scrollhint__text">Scroll</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPROCHE -->
+    <section class="panel approach" id="approche" data-panel>
+      <div class="wrap">
+        <div class="sectionHead">
+          <p class="kicker reveal">Une approche de musicien</p>
+          <h2 class="title reveal">On respecte votre intention. On sublime sans déformer.</h2>
+          <p class="sub reveal">
+            Notre travail commence par l’écoute : votre son, votre geste, votre place.
+            La technique n’est qu’un moyen pour préserver le réel.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card reveal" data-tilt>
+            <h3>Le timbre d’abord</h3>
+            <p>Choix de placement, de dynamique, d’équilibre : on protège la signature de l’instrument.</p>
+            <div class="card__tag">Nuance & matière</div>
+          </article>
+
+          <article class="card reveal" data-tilt>
+            <h3>La dynamique intacte</h3>
+            <p>Pas d’écrasement “moderne” par défaut. Juste ce qu’il faut pour porter la musique.</p>
+            <div class="card__tag">Respiration</div>
+          </article>
+
+          <article class="card reveal" data-tilt>
+            <h3>Le mix “invisible”</h3>
+            <p>On enlève les obstacles, on clarifie, on révèle. Vous reconnaissez votre son.</p>
+            <div class="card__tag">Évidence</div>
+          </article>
+        </div>
+
+        <div class="quote reveal">
+          <div class="quote__mark">“</div>
+          <p class="quote__text">
+            Le meilleur mix, c’est celui qui donne l’impression que rien n’a été touché —
+            alors que tout est à sa place.
+          </p>
+          <div class="quote__by">— Lysis</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRESTATIONS -->
+    <section class="panel services" id="prestations" data-panel>
+      <div class="wrap">
+        <div class="sectionHead">
+          <p class="kicker reveal">Prestations</p>
+          <h2 class="title reveal">Pour les musiciens qui veulent du parfait, pas du “technique”.</h2>
+          <p class="sub reveal">Tout est pensé pour une écoute exigeante : salle, prises, montage, mix, finitions.</p>
+        </div>
+
+        <div class="serviceGrid">
+          <article class="service reveal" data-parallax="0.10">
+            <div class="service__top">
+              <h3>Prise de son</h3>
+              <span class="pill">Studio / Live</span>
+            </div>
+            <ul class="list">
+              <li>Placement micro orienté timbre</li>
+              <li>Gestion des dynamiques réelles</li>
+              <li>Captation multi-prises “propre”</li>
+            </ul>
+            <a class="link" href="#contact">Parler du projet →</a>
+          </article>
+
+          <article class="service reveal" data-parallax="0.16">
+            <div class="service__top">
+              <h3>Montage & édition</h3>
+              <span class="pill">Discret</span>
+            </div>
+            <ul class="list">
+              <li>Respect du phrasé / respirations</li>
+              <li>Nettoyage élégant (sans “plastique”)</li>
+              <li>Consolidation du groove / précision</li>
+            </ul>
+            <a class="link" href="#contact">Demander une écoute →</a>
+          </article>
+
+          <article class="service reveal" data-parallax="0.22">
+            <div class="service__top">
+              <h3>Mixage “timbre”</h3>
+              <span class="pill">Haut de gamme</span>
+            </div>
+            <ul class="list">
+              <li>Équilibre naturel & profondeur</li>
+              <li>Traitements subtils, musicalité</li>
+              <li>Révisions incluses (cadre clair)</li>
+            </ul>
+            <a class="link" href="#contact">Obtenir un devis →</a>
+          </article>
+
+          <article class="service reveal" data-parallax="0.28">
+            <div class="service__top">
+              <h3>Finitions</h3>
+              <span class="pill">Diffusion</span>
+            </div>
+            <ul class="list">
+              <li>Cohérence de l’album / EP</li>
+              <li>Contrôle translation (casques/enceintes)</li>
+              <li>Exports & stems propres</li>
+            </ul>
+            <a class="link" href="#contact">Préparer la sortie →</a>
+          </article>
+        </div>
+
+        <div class="callout reveal">
+          <div class="callout__title">Vous voulez un rendu “comme si vous étiez dans la pièce”.</div>
+          <div class="callout__text">C’est exactement notre obsession.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="panel process" id="process" data-panel>
+      <div class="wrap">
+        <div class="sectionHead">
+          <p class="kicker reveal">Méthode</p>
+          <h2 class="title reveal">Un parcours simple. Une exigence maximale.</h2>
+          <p class="sub reveal">On vous guide sans vous noyer. Chaque étape sert la musique.</p>
+        </div>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <div class="step__num">01</div>
+            <div class="step__body">
+              <h3>Écoute & intention</h3>
+              <p>Références, univers, place de l’instrument. On définit “le vrai”.</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <div class="step__num">02</div>
+            <div class="step__body">
+              <h3>Prise / session</h3>
+              <p>On capte sans brutaliser : matière, attaque, souffle, corps.</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <div class="step__num">03</div>
+            <div class="step__body">
+              <h3>Montage discret</h3>
+              <p>On garde la vie. On enlève seulement ce qui gêne.</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <div class="step__num">04</div>
+            <div class="step__body">
+              <h3>Mix & finitions</h3>
+              <p>Profondeur, cohérence, élégance. Le son reste le vôtre.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="miniGrid">
+          <div class="mini reveal">
+            <div class="mini__k">Délai</div>
+            <div class="mini__v">Cadre clair dès le départ</div>
+          </div>
+          <div class="mini reveal">
+            <div class="mini__k">Échanges</div>
+            <div class="mini__v">Écoute guidée, retours simples</div>
+          </div>
+          <div class="mini reveal">
+            <div class="mini__k">Livraison</div>
+            <div class="mini__v">Masters + stems + versions</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEMOIGNAGES -->
+    <section class="panel proof" id="temoignages" data-panel>
+      <div class="wrap">
+        <div class="sectionHead">
+          <p class="kicker reveal">Avis</p>
+          <h2 class="title reveal">Ce que disent les musiciens exigeants</h2>
+          <p class="sub reveal">Du vocabulaire musical, pas des specs.</p>
+        </div>
+
+        <div class="testimonials">
+          <figure class="t reveal">
+            <blockquote>
+              “On entend enfin le bois, la corde, la main. Tout est plus clair sans perdre de douceur.”
+            </blockquote>
+            <figcaption>Guitariste — Session acoustique</figcaption>
+          </figure>
+
+          <figure class="t reveal">
+            <blockquote>
+              “Le mix ne triche pas : il met l’intention au premier plan. J’ai reconnu mon instrument immédiatement.”
+            </blockquote>
+            <figcaption>Violoniste — Enregistrement de chambre</figcaption>
+          </figure>
+
+          <figure class="t reveal">
+            <blockquote>
+              “Ça respire. La dynamique vit. C’est rare.”
+            </blockquote>
+            <figcaption>Pianiste — EP solo</figcaption>
+          </figure>
+        </div>
+
+        <div class="logos reveal" aria-label="Ambiance visuelle">
+          <span class="logoPill">Acoustique</span>
+          <span class="logoPill">Chambre</span>
+          <span class="logoPill">Jazz</span>
+          <span class="logoPill">Folk</span>
+          <span class="logoPill">Classique</span>
+          <span class="logoPill">Live</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="panel contact" id="contact" data-panel>
+      <div class="wrap">
+        <div class="contactBox reveal">
+          <div class="contactBox__left">
+            <p class="kicker">Contact</p>
+            <h2 class="title">Parlez-nous de votre instrument et de votre intention.</h2>
+            <p class="sub">
+              Envoyez un message simple (projet, style, liens). On vous répond avec une proposition claire.
+            </p>
+
+            <div class="contactMeta">
+              <div class="meta">
+                <div class="meta__k">Email</div>
+                <a class="meta__v" href="mailto:contact@lysis.audio">contact@lysis.audio</a>
+              </div>
+              <div class="meta">
+                <div class="meta__k">Réponse</div>
+                <div class="meta__v">Sous 24–48h (jours ouvrés)</div>
+              </div>
+              <div class="meta">
+                <div class="meta__k">Livrables</div>
+                <div class="meta__v">WAV / stems / versions</div>
+              </div>
+            </div>
+          </div>
+
+          <form class="form" onsubmit="return false;" aria-label="Formulaire de contact (démo)">
+            <label>
+              <span>Votre nom</span>
+              <input type="text" placeholder="Nom / groupe" autocomplete="name" />
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" placeholder="vous@exemple.com" autocomplete="email" />
+            </label>
+            <label>
+              <span>Votre projet</span>
+              <textarea rows="5" placeholder="Instrument(s), style, objectif, liens d'écoute…"></textarea>
+            </label>
+            <button class="btn btn--primary btn--full" type="button" id="copyEmail">
+              Copier l’email de contact
+              <span class="btn__icon">⎘</span>
+            </button>
+
+            <p class="fineprint">
+              (Le formulaire est volontairement léger : on favorise un échange direct.)
+            </p>
+          </form>
+        </div>
+
+        <footer class="footer">
+          <div class="footer__left">
+            <img src="assets/badge.png" alt="" class="footer__badge" />
+            <div>
+              <div class="footer__brand">Lysis</div>
+              <div class="footer__small">Prise de son • Mixage • Respect du timbre</div>
+            </div>
+          </div>
+          <div class="footer__right">
+            <a href="#home">Haut de page</a>
+            <span class="dot">•</span>
+            <a href="#prestations">Prestations</a>
+            <span class="dot">•</span>
+            <a href="mailto:contact@lysis.audio">Email</a>
+          </div>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <!-- Mobile menu -->
+  <div class="drawer" aria-hidden="true">
+    <div class="drawer__panel" role="dialog" aria-label="Menu">
+      <a href="#approche">Approche</a>
+      <a href="#prestations">Prestations</a>
+      <a href="#process">Méthode</a>
+      <a href="#temoignages">Avis</a>
+      <a class="btn btn--primary" href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
